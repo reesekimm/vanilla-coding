@@ -1,0 +1,118 @@
+html {
+  background-color: #333333;
+  font-family: 'Lato', sans-serif;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.contents .title {
+  font-size: 62px;
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+  color: #ffffff;
+  margin: 30px auto;
+}
+
+.score-section {
+  width: 360px;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: left;
+  margin: 10px 0 10px 0;
+}
+
+.score__text {
+  color: #62f844;
+}
+
+.score__score {
+  color: red;
+}
+
+.hole-section {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  margin: 0 auto;
+}
+
+.hole__holes {
+  width: 360px;
+  height: 360px;
+  position: absolute;
+}
+
+.hole {
+  width: 120px;
+  height: 120px;
+  background-image: url("img/hole.jpg");
+  background-size: cover;
+  display: inline-block;
+  margin-top: -4px;
+  transition: all 0.3s;
+  top: 100%;
+}
+
+.hole.mole {
+  background-image: url("img/mole.jpg");
+  top: 0;
+  cursor: pointer;
+}
+
+.hole__popup {
+  width: 360px;
+  height: 360px;
+  margin-top: -4px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #333333;
+  border: 3px solid white;
+  text-align: center;
+  color: #62f844;
+  font-size: 40px;
+  font-weight: 900;
+  position: absolute;
+}
+
+.showing {
+  display: flex;
+}
+
+.btn-section {
+  width: 140px;
+  height: 40px;
+  position: relative;
+  margin: 25px auto;
+}
+
+.btn__btn {
+  width: 140px;
+  height: 40px;
+  color: white;
+  font-size: 30px;
+  font-weight: 900;
+  text-align: center;
+  padding-top: 3px;
+  background-color: #333333;
+  border: 1.5px solid white;
+  border-radius: 35px;
+  margin-top: 30px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}

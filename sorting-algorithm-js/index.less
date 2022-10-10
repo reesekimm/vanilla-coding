@@ -1,0 +1,162 @@
+// Apply a natural box layout model to all elements
+// but allowing components to change
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+html, body {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: #252525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.title {
+  width: 660px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 45px;
+  color: #252525;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+.content {
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 30px 0 10px 0;
+}
+
+.menu_selection_form select {
+  width: 150px;
+  height: 40px;
+  background: #fff url('https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png') no-repeat;
+  background-size: 20px;
+  background-position: right 10px center;
+  padding-left: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  outline: none;
+  border: 1.5px solid  #252525;
+  font: 16px 'Roboto', sans-serif;
+  color: #252525;
+}
+
+.menu_input {
+  width: 60%;
+}
+
+input::placeholder {
+  padding-left: 5px;
+  font: italic 100 17px 'Roboto', sans-serif;
+  color: #b4b4b4;
+}
+
+.menu_input input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1.5px solid #252525;
+  color: gray;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}
+
+.menu_start-btn {
+  width: 70px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #252525;
+  color: white;
+  font: 20px 'Roboto', sans-serif;
+  border:none;
+  outline: none;
+  cursor: pointer;
+}
+
+.canvas {
+  width: 100%;
+  height: 420px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-top: 40px;
+  padding-top: 20px;
+}
+
+.canvas div {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border: 1.5px solid #252525;
+  border-radius: 4px;
+  font-size: 20px;
+  text-align: center;
+  margin: 0 10px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+
+  // colors for bubble sort
+  &.gray {
+    background-color: #c9c9c9;
+  }
+
+  &.green {
+    background-color: #6bc085;
+  }
+
+  &.cherry {
+    background-color: #e76666;
+    font-weight: 400;
+  }
+
+  &.moveRight {
+    animation-duration: .5s;
+    animation-name: slideRight;
+    animation-fill-mode: forwards;
+  }
+
+  &.moveLeft {
+    animation-duration: .5s;
+    animation-name: slideLeft;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slideRight {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(70px);
+    }
+  }
+
+  @keyframes slideLeft {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-70px);
+    }
+  }
+}
+
+.canvas div span {
+  position: relative;
+  top: -40px;
+}
